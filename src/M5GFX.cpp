@@ -1599,7 +1599,7 @@ namespace m5gfx
         bus_cfg.pin_mosi = GPIO_NUM_35;
         bus_cfg.pin_miso = (gpio_num_t)-1; //GPIO_NUM_NC;
         bus_cfg.pin_sclk = GPIO_NUM_36;
-        bus_cfg.pin_dc   = GPIO_NUM_34;
+        bus_cfg.pin_dc   = GPIO_NUM_20;
         bus_cfg.spi_mode = 0;
         bus_cfg.spi_3wire = true;
         bus_spi->config(bus_cfg);
@@ -1640,7 +1640,7 @@ namespace m5gfx
           {
             auto cfg = p->config();
             cfg.pin_cs  = GPIO_NUM_37;
-            cfg.pin_rst = GPIO_NUM_33;
+            cfg.pin_rst = GPIO_NUM_47;
             cfg.panel_height = 240;
             cfg.offset_rotation = 0;
             cfg.readable = true;
@@ -1670,7 +1670,7 @@ namespace m5gfx
 
           goto init_clear;
         }
-        lgfx::pinMode(GPIO_NUM_33, lgfx::pin_mode_t::input); // LCD RST
+        lgfx::pinMode(GPIO_NUM_47, lgfx::pin_mode_t::input); // LCD RST
         bus_spi->release();
       }
 
